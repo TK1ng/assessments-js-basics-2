@@ -20,22 +20,24 @@
 
 const cart = [
     {
-        name: 'pizza', 
+        name: 'pizza',
         price: 9.99
-    }, 
+    },
     {
-        name: 'pasta', 
+        name: 'pasta',
         price: 8.99
-    }, 
+    },
     {
-        name: 'salad', 
+        name: 'salad',
         price: 7.99
     }
 ]
 
 //CODE HERE
 
-// const summedPrice = cart.reduce(/* CALLBACK HERE */)
+const summedPrice = cart.reduce((acc, curr) => acc + curr.price, 0);
+
+// console.log(summedPrice)
 
 
 //////////////////PROBLEM 2////////////////////
@@ -53,9 +55,13 @@ const cart = [
     decimals, for example: .06 for a 6% tax.
 */
 
-//CODE HERE
+const calcFinalPrice = (carTotal, couponValue, tax) => {
+    let totalTax = carTotal * tax;
 
+    return carTotal + totalTax - couponValue;
+}
 
+// console.log(calcFinalPrice(20000, 5000, 0.06))
 
 //////////////////PROBLEM 3////////////////////
 /*  
@@ -78,7 +84,12 @@ const cart = [
 */
 
 /*
-    TEXT ANSWER HERE
+    Customer object properties:
+    - name: str | this will be a key identifier to distinguish customers and be able to present personalized content
+    - id: num | this will allow for having a unique identifier to help organize data
+    - phone: num | important if the customer needs to be contacted (call to confirm order is ready, text when table is ready, etc)
+    - order: arr | list items that have been ordered by customer or reference their cart
+
 
 */
 
@@ -87,4 +98,10 @@ const cart = [
     guidelines.
 */
 
-//CODE HERE
+const customer = {
+    name: 'King',
+    id: 2,
+    phone: 1235552222,
+    order: { ...cart }
+}
+
