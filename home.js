@@ -21,8 +21,9 @@
     'Welcome back, Andrew'
 */
 
-//CODE HERE
+const greetUser = (username) => `Welcome back, ${username}!`;
 
+// console.log(greetUser('Taryn'))
 
 
 
@@ -49,9 +50,14 @@
 
 const deliveryAreaZipCodes = [85205, 85204, 85203, 85213, 85206]
 
-//CODE HERE
+function canWeDeliver(zipCode) {
+    let canDeliver = deliveryAreaZipCodes.includes(zipCode);
 
+    return canDeliver ? `Good news! You are eligible for delivery 😄` : `Sorry, we can't deliver to that address 😢`;
+}
 
+// console.log(canWeDeliver(85202)) 
+// console.log(canWeDeliver(85206))
 
 /* 
     Problem 2 Continued
@@ -70,7 +76,15 @@ const deliveryAreaZipCodes = [85205, 85204, 85203, 85213, 85206]
     Name your new function `canWeDeliverTwo`.
 */
 
-// CODE HERE
+function canWeDeliverTwo(zipCode) {
+    for (let i = 0; i < deliveryAreaZipCodes.length; i++) {
+        if (deliveryAreaZipCodes[i] === zipCode) {
+            return `Good news! You are eligible for delivery 😄`
+        } else {
+            return `Sorry, we can't deliver to that address 😢`
+        }
+    }
+}
 
 
 //////////////////PROBLEM 3////////////////////
@@ -88,11 +102,11 @@ const deliveryAreaZipCodes = [85205, 85204, 85203, 85213, 85206]
 
 const deals = [
     {
-        title: '15% Off!', 
+        title: '15% Off!',
         desc: 'Applied to your entire order when you spend $30 or more'
-    }, 
+    },
     {
-        title: 'Free Kids Meal with 2 Regular Entrees', 
+        title: 'Free Kids Meal with 2 Regular Entrees',
         desc: '   This deal lasts until the end of March! '
     }
 ]
@@ -106,13 +120,15 @@ const deals = [
     to replace the 15 with a 10.
 */
 
-//CODE HERE
+deals[0].title = deals[0].title.replace('15', '10');
+
+// console.log(deals[0])
 
 
 
 /*
     The restaurant is going to continue its
-    family deal for another month. 
+    family deal for another month.
 
     Reassign the value of the second deal's desc
     to be itself, but use the `replace` method
@@ -123,4 +139,6 @@ const deals = [
     to be displaying wrong on the live site.
 */
 
-//CODE HERE
+deals[1].desc = deals[1].desc.replace('March', 'April');
+
+// console.log(deals[1]);
