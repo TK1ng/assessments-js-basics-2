@@ -1,2 +1,3 @@
-# Figma House of Vegan mockup
-[View](https://www.figma.com/file/zD5m3OCjXnsvBR09hTTaXa/Untitled?node-id=0%3A1)
+# Figma Design
+House of Vegan mockup
+[View Desin on Figma](https://www.figma.com/file/zD5m3OCjXnsvBR09hTTaXa/Untitled?node-id=0%3A1)
